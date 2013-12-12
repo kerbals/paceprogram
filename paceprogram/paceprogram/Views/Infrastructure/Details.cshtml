@@ -1,0 +1,85 @@
+﻿@model paceproject.Models.Infrastructure
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Infrastructure</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InfrastructureName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InfrastructureName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Room.RoomName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Room.RoomName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Equipment.EquipmentCategory)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Equipment.EquipmentCategory)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SerialNubmer)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SerialNubmer)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InventoryTag)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InventoryTag)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department.DepartmentName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department.DepartmentName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PurchaseDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PurchaseDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Model)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Model)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Make.MakeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Make.MakeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Owner)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Owner)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.InfrastructureID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

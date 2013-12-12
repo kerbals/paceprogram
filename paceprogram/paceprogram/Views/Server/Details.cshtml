@@ -1,0 +1,78 @@
+﻿@model paceproject.Models.Server
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Server</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServerName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GeneralInformation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GeneralInformation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IPAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IPAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OperatingSystem)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OperatingSystem)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Infrastructure.InfrastructureName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Infrastructure.InfrastructureName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department.DepartmentName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department.DepartmentName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DomainBound)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DomainBound)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ServerID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

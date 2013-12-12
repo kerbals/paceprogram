@@ -1,0 +1,78 @@
+﻿@model paceproject.Models.Service
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Service</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceInformation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceInformation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceIPAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceIPAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LicenseKey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LicenseKey)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department.DepartmentName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department.DepartmentName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InstallDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InstallDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Server.ServerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Server.ServerName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ServiceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

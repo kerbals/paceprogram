@@ -1,0 +1,82 @@
+﻿@model paceproject.Models.Service
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Service</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceInformation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceInformation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ServiceIPAddress)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ServiceIPAddress)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Username)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Username)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Password)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Password)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LicenseKey)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LicenseKey)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Department.DepartmentName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department.DepartmentName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.InstallDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.InstallDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Server.ServerName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Server.ServerName)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

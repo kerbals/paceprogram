@@ -1,0 +1,100 @@
+﻿@model paceproject.Models.Server
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Server</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServerName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServerName)
+            @Html.ValidationMessageFor(model => model.ServerName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GeneralInformation)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.GeneralInformation, 10, 15, null)
+            @Html.ValidationMessageFor(model => model.GeneralInformation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IPAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IPAddress)
+            @Html.ValidationMessageFor(model => model.IPAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OperatingSystem)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.OperatingSystem)
+            @Html.ValidationMessageFor(model => model.OperatingSystem)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InfrastructureID, "Infrastructure")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("InfrastructureID", String.Empty)
+            @Html.ValidationMessageFor(model => model.InfrastructureID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentID, "Department")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DepartmentID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DepartmentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DomainBound)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DomainBound)
+            @Html.ValidationMessageFor(model => model.DomainBound)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

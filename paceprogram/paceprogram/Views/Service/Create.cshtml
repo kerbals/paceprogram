@@ -1,0 +1,100 @@
+﻿@model paceproject.Models.Service
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Service</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceName)
+            @Html.ValidationMessageFor(model => model.ServiceName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceInformation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceInformation)
+            @Html.ValidationMessageFor(model => model.ServiceInformation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServiceIPAddress)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ServiceIPAddress)
+            @Html.ValidationMessageFor(model => model.ServiceIPAddress)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Username)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LicenseKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LicenseKey)
+            @Html.ValidationMessageFor(model => model.LicenseKey)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentID, "Department")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DepartmentID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DepartmentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InstallDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InstallDate)
+            @Html.ValidationMessageFor(model => model.InstallDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ServerID, "Server")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("ServerID", String.Empty)
+            @Html.ValidationMessageFor(model => model.ServerID)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

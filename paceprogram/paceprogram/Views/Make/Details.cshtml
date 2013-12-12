@@ -1,0 +1,22 @@
+﻿@model paceproject.Models.Make
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Make</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MakeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MakeName)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MakeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

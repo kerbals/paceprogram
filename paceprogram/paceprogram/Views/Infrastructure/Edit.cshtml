@@ -1,0 +1,110 @@
+﻿@model paceproject.Models.Infrastructure
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Infrastructure</legend>
+
+        @Html.HiddenFor(model => model.InfrastructureID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InfrastructureName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InfrastructureName)
+            @Html.ValidationMessageFor(model => model.InfrastructureName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoomID, "Room")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("RoomID", String.Empty)
+            @Html.ValidationMessageFor(model => model.RoomID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EquipmentID, "Equipment")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("EquipmentID", String.Empty)
+            @Html.ValidationMessageFor(model => model.EquipmentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SerialNubmer)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SerialNubmer)
+            @Html.ValidationMessageFor(model => model.SerialNubmer)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InventoryTag)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.InventoryTag)
+            @Html.ValidationMessageFor(model => model.InventoryTag)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentID, "Department")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("DepartmentID", String.Empty)
+            @Html.ValidationMessageFor(model => model.DepartmentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PurchaseDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PurchaseDate)
+            @Html.ValidationMessageFor(model => model.PurchaseDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Model)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Model)
+            @Html.ValidationMessageFor(model => model.Model)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MakeID, "Make")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("MakeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.MakeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Owner)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Owner)
+            @Html.ValidationMessageFor(model => model.Owner)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
