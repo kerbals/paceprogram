@@ -16,7 +16,7 @@ namespace paceproject.Models
         [Display(Name="Information and Notes")]
         public string GeneralInformation { get; set; }
         [Display(Name="IP Address")]
-        [RegularExpression("/^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3});([0-9]‌​{1,5})$/",ErrorMessage="Please enter a valid an IP address.")]
+        //[RegularExpression("/^([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3}).([0-9]{1,3});([0-9]‌​{1,5})$/",ErrorMessage="Please enter a valid an IP address.")]
         public string IPAddress { get; set; }
         [Display(Name="OS Installed")]
         public string OperatingSystem { get; set; }
