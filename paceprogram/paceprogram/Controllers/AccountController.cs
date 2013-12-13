@@ -14,7 +14,7 @@ using paceprogram.Models;
 namespace paceprogram.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
+    //[InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //

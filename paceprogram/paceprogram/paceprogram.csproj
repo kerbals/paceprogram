@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{E74604CD-B256-493F-94D8-3F90CA03D0B1}</ProjectGuid>
+    <ProjectGuid>{B8C018B5-98CA-4965-90D0-C3A51D7101AA}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -194,6 +194,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="InitSecurityDb.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\Equipment.cs" />
@@ -330,6 +331,11 @@
     <Content Include="Views\Equipment\Create.cshtml" />
     <Content Include="Views\Equipment\Edit.cshtml" />
     <Content Include="Views\Equipment\Delete.cshtml" />
+    <Content Include="Views\Infrastructure\Index.cshtml" />
+    <Content Include="Views\Infrastructure\Details.cshtml" />
+    <Content Include="Views\Infrastructure\Create.cshtml" />
+    <Content Include="Views\Infrastructure\Edit.cshtml" />
+    <Content Include="Views\Infrastructure\Delete.cshtml" />
     <Content Include="Views\Make\Index.cshtml" />
     <Content Include="Views\Make\Details.cshtml" />
     <Content Include="Views\Make\Create.cshtml" />
@@ -340,11 +346,6 @@
     <Content Include="Views\Room\Create.cshtml" />
     <Content Include="Views\Room\Edit.cshtml" />
     <Content Include="Views\Room\Delete.cshtml" />
-    <Content Include="Views\Infrastructure\Index.cshtml" />
-    <Content Include="Views\Infrastructure\Details.cshtml" />
-    <Content Include="Views\Infrastructure\Create.cshtml" />
-    <Content Include="Views\Infrastructure\Edit.cshtml" />
-    <Content Include="Views\Infrastructure\Delete.cshtml" />
     <Content Include="Views\Server\Index.cshtml" />
     <Content Include="Views\Server\Details.cshtml" />
     <Content Include="Views\Server\Create.cshtml" />

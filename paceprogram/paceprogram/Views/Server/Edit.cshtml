@@ -27,7 +27,7 @@
             @Html.LabelFor(model => model.GeneralInformation)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.GeneralInformation, 10, 15, null)
+            @Html.EditorFor(model => model.GeneralInformation)
             @Html.ValidationMessageFor(model => model.GeneralInformation)
         </div>
 
