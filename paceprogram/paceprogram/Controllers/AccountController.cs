@@ -124,7 +124,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Account/Manage
-
+        [Authorize(Roles="Admin",Users="test")]
         public ActionResult Manage(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
@@ -139,7 +139,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Account/Manage
-
+        [Authorize(Roles = "Admin", Users = "test")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Manage(LocalPasswordModel model)

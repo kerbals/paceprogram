@@ -9,7 +9,7 @@ using paceproject.Models;
 
 namespace paceprogram.Controllers
 {
-    public class MakeController : Controller
+    public class MakeController : ControllerBase
     {
         private ServerDocDB db = new ServerDocDB();
 
@@ -36,7 +36,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Make/Create
-
+        [Authorize(Roles = "admin", Users = "test")]
         public ActionResult Create()
         {
             return View();
@@ -44,7 +44,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Make/Create
-
+        [Authorize(Roles = "admin", Users = "test")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Make make)
@@ -61,7 +61,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Make/Edit/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         public ActionResult Edit(int id = 0)
         {
             Make make = db.Makes.Find(id);
@@ -74,7 +74,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Make/Edit/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Make make)
@@ -90,7 +90,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Make/Delete/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         public ActionResult Delete(int id = 0)
         {
             Make make = db.Makes.Find(id);
@@ -103,7 +103,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Make/Delete/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

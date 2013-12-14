@@ -5,38 +5,22 @@
 }
 
 <h2>Index</h2>
-
+@if ((bool)ViewBag.IsAdmin)
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 <table>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ServerName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GeneralInformation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IPAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OperatingSystem)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Infrastructure.InfrastructureName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Department.DepartmentName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DomainBound)
         </th>
         <th></th>
     </tr>
@@ -47,34 +31,24 @@
             @Html.DisplayFor(modelItem => item.ServerName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.GeneralInformation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IPAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.OperatingSystem)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Infrastructure.InfrastructureName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Department.DepartmentName)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DomainBound)
-        </td>
+        @if ((bool)ViewBag.IsAdmin)
+        {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ServerID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ServerID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ServerID })
         </td>
+        }else
+        {
+            <td>
+           @Html.ActionLink("Details", "Details", new { id=item.ServerID })
+           </td>
+        }
     </tr>
 }
 

@@ -9,7 +9,7 @@ using paceproject.Models;
 
 namespace paceprogram.Controllers
 {
-    public class InfrastructureController : Controller
+    public class InfrastructureController : ControllerBase
     {
         private ServerDocDB db = new ServerDocDB();
 
@@ -107,7 +107,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Infrastructure/Delete/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         public ActionResult Delete(int id = 0)
         {
             Infrastructure infrastructure = db.Infrastructures.Find(id);
@@ -120,7 +120,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Infrastructure/Delete/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

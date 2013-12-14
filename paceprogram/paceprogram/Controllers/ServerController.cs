@@ -9,7 +9,7 @@ using paceproject.Models;
 
 namespace paceprogram.Controllers
 {
-    public class ServerController : Controller
+    public class ServerController : ControllerBase
     {
         private ServerDocDB db = new ServerDocDB();
 
@@ -37,7 +37,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Server/Create
-
+        [Authorize(Roles = "admin", Users = "test")]
         public ActionResult Create()
         {
             ViewBag.InfrastructureID = new SelectList(db.Infrastructures, "InfrastructureID", "InfrastructureName");
@@ -47,7 +47,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Server/Create
-
+        [Authorize(Roles = "admin", Users = "test")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Server server)
@@ -66,7 +66,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Server/Edit/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         public ActionResult Edit(int id = 0)
         {
             Server server = db.Servers.Find(id);
@@ -81,7 +81,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Server/Edit/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Server server)
@@ -99,7 +99,7 @@ namespace paceprogram.Controllers
 
         //
         // GET: /Server/Delete/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         public ActionResult Delete(int id = 0)
         {
             Server server = db.Servers.Find(id);
@@ -112,7 +112,7 @@ namespace paceprogram.Controllers
 
         //
         // POST: /Server/Delete/5
-
+        [Authorize(Roles = "admin", Users = "test")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
