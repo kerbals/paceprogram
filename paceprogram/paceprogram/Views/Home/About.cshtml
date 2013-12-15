@@ -1,34 +1,41 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "About ServerDocDB";
 }
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                
+            </hgroup>
+            <p>
+               This site is to help gather information about your network in an organized and easy to read fashion. <br>
+                Get your department in check!
 
-<hgroup class="title">
-    <h1>@ViewBag.Title.</h1>
-    <h2>@ViewBag.Message</h2>
-</hgroup>
+            </p>
+        </div>
+    </section>
+}
+<h3>Features include:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>Server Documentation</h5>
+        Each server can be documented here, and useful things such as IP Address, System Username, Passwords, operating system and more are stored here.
+        Then, take time to match up what parts of the infrastucture it's tied to, and then what services it is providing.
+    </li>
 
-<article>
-    <p>
-        Use this area to provide additional information.
-    </p>
+    <li class="two">
+        <h5>Infrastructure Documentation</h5>
+        Keep track of equipment brought in and where it is located! Fill in asset tags, serial numbers, room location and more.
+    </li>
 
-    <p>
-        Use this area to provide additional information.
-    </p>
-
-    <p>
-        Use this area to provide additional information.
-    </p>
-</article>
-
-<aside>
-    <h3>Aside Title</h3>
-    <p>
-        Use this area to provide additional information.
-    </p>
-    <ul>
-        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-        <li>@Html.ActionLink("About", "About", "Home")</li>
-        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-    </ul>
-</aside>
+    <li class="three">
+        <h5>Services</h5>
+        Know what services are being offered in your company at a glance. Document all servers with FTP, licensing servers, Active Directory, or anything else you need.
+        License keys, installation dates, usernames and passwords can all be stored here as well.
+    </li>
+    <section class="featured">
+        <h3>Bringing it all together</h3>
+        Your network will become easier to understand and show to fellow co-workers and management alike. Clicking on a server information page, you'll quickly have what services are running, where it's located, and much more. Training new co-workers will become a breeze!
+    </section>
+</ol>
