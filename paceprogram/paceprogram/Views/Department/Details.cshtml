@@ -16,7 +16,15 @@
         @Html.DisplayFor(model => model.DepartmentName)
     </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.DepartmentID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@if ((bool)ViewBag.IsAdmin)
+    {
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.DepartmentID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }else
+    {
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

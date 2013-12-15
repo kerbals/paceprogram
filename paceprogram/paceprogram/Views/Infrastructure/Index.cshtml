@@ -21,25 +21,13 @@
             @Html.DisplayNameFor(model => model.Equipment.EquipmentCategory)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SerialNubmer)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InventoryTag)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Department.DepartmentName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PurchaseDate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Model)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Make.MakeName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Owner)
         </th>
         <th></th>
     </tr>
@@ -56,16 +44,7 @@
             @Html.DisplayFor(modelItem => item.Equipment.EquipmentCategory)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SerialNubmer)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InventoryTag)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PurchaseDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Model)
@@ -73,14 +52,20 @@
         <td>
             @Html.DisplayFor(modelItem => item.Make.MakeName)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Owner)
-        </td>
+        @if ((bool)ViewBag.IsAdmin)
+        {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.InfrastructureID }) |
             @Html.ActionLink("Details", "Details", new { id=item.InfrastructureID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.InfrastructureID })
         </td>
+        }else
+        {
+            <td>
+           @Html.ActionLink("Edit", "Edit", new { id=item.InfrastructureID })
+           @Html.ActionLink("Details", "Details", new { id=item.InfrastructureID })
+           </td>
+        }
     </tr>
 }
 

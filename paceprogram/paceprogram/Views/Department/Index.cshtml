@@ -6,9 +6,12 @@
 
 <h2>Index</h2>
 
+@if ((bool)ViewBag.IsAdmin)
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 <table>
     <tr>
         <th>
@@ -22,11 +25,19 @@
         <td>
             @Html.DisplayFor(modelItem => item.DepartmentName)
         </td>
+        @if ((bool)ViewBag.IsAdmin)
+        {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DepartmentID }) |
             @Html.ActionLink("Details", "Details", new { id=item.DepartmentID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.DepartmentID })
         </td>
+        }else
+        {
+            <td>
+           @Html.ActionLink("Details", "Details", new { id=item.DepartmentID })
+           </td>
+        }
     </tr>
 }
 

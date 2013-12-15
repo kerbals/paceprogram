@@ -72,7 +72,15 @@
         @Html.DisplayFor(model => model.DomainBound)
     </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ServerID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@if ((bool)ViewBag.IsAdmin)
+    {
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.ServerID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }else
+    {
+    <p>
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    }

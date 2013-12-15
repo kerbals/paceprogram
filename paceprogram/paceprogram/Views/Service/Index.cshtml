@@ -6,34 +6,19 @@
 
 <h2>Index</h2>
 
+@if ((bool)ViewBag.IsAdmin)
+{
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+}
 <table>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.ServiceName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ServiceInformation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ServiceIPAddress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Username)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Password)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LicenseKey)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.Department.DepartmentName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.InstallDate)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Server.ServerName)
@@ -47,34 +32,24 @@
             @Html.DisplayFor(modelItem => item.ServiceName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ServiceInformation)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ServiceIPAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Username)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Password)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LicenseKey)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.Department.DepartmentName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.InstallDate)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Server.ServerName)
         </td>
+        @if ((bool)ViewBag.IsAdmin)
+        {
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ServiceID }) |
             @Html.ActionLink("Details", "Details", new { id=item.ServiceID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.ServiceID })
         </td>
+        }else
+        {
+            <td>
+           @Html.ActionLink("Details", "Details", new { id=item.ServiceID })
+           </td>
+        }
     </tr>
 }
 
